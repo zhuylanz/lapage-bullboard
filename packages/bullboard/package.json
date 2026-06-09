@@ -1,0 +1,71 @@
+{
+  "name": "@lapage/bullboard",
+  "version": "7.2.1-lapage.0",
+  "description": "Mobile-enhanced Bull queue dashboard built on bull-board.",
+  "keywords": [
+    "bull",
+    "bullmq",
+    "dashboard",
+    "monitoring",
+    "queue",
+    "redis",
+    "mobile"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/zhuylanz/lapage-bullboard.git",
+    "directory": "packages/bullboard"
+  },
+  "license": "MIT",
+  "author": "lapage",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./express": {
+      "types": "./dist/express.d.ts",
+      "default": "./dist/express.js"
+    },
+    "./bullMQAdapter": "./dist/bullMQAdapter.js",
+    "./bullMQProAdapter": "./dist/bullMQProAdapter.js",
+    "./bullAdapter": "./dist/bullAdapter.js",
+    "./baseAdapter": "./dist/baseAdapter.d.ts",
+    "./constants/statuses": "./dist/constants/statuses.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rm -rf dist",
+    "build": "yarn clean && tsc && mkdir -p dist/ui && cp -R ../ui/dist dist/ui/dist"
+  },
+  "dependencies": {
+    "@bull-board/api": "7.2.1",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1"
+  },
+  "peerDependencies": {
+    "bull": ">=3 || >=4",
+    "bullmq": ">=4 || >=5"
+  },
+  "peerDependenciesMeta": {
+    "bull": {
+      "optional": true
+    },
+    "bullmq": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@types/ejs": "^3.1.5",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.9.2",
+    "typescript": "5.9.3"
+  }
+}

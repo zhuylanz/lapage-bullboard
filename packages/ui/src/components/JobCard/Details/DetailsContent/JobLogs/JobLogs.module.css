@@ -126,6 +126,25 @@
 }
 
 @media (max-width: 768px) {
+  .toolbar {
+    gap: 0.35rem;
+    padding: 0.5rem 0.35rem;
+  }
+
+  .toolbar > li:first-child {
+    min-width: 0;
+  }
+
+  .preWrapper {
+    padding: 0 0.35rem 0.5rem;
+    max-width: 100%;
+  }
+
+  .preWrapper ol {
+    padding-left: 2.25rem;
+    overflow-wrap: anywhere;
+  }
+
   .logLineCopyButton {
     opacity: 0.5;
   }

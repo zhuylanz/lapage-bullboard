@@ -1,5 +1,7 @@
 .content {
-  width: var(--anchor-width, 100%);
+  width: min(var(--anchor-width, 100vw), calc(100vw - 1.5rem));
+  max-height: min(70vh, 32rem);
+  overflow-y: auto;
 }
 
 .container {
@@ -16,6 +18,8 @@
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: 500;
+  min-height: 2.75rem;
+  align-items: center;
 }
 .separator {
   height: 1px;
@@ -26,6 +30,7 @@
 .item {
   display: flex !important;
   align-items: center;
+  min-height: 2.75rem;
 }
 
 .item.active {

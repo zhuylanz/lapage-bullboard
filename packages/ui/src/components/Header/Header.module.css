@@ -79,36 +79,53 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .header {
-    overflow: hidden;
+    overflow: visible;
     flex-wrap: wrap;
+    align-content: flex-start;
+    min-height: var(--header-height);
   }
 
   .logo {
     flex-basis: auto;
-    width: auto;
-    height: auto;
+    width: min(48vw, 12rem);
+    height: 3.5rem;
     line-height: inherit;
     background-color: transparent;
     border: none;
-    padding: 0.5rem;
+    padding: 0.5rem 0.75rem;
+    color: var(--text-color);
+    box-shadow: none;
+    font-size: 1rem;
+  }
+
+  .logo > .img {
+    max-height: 2rem;
   }
 
   .mobileQueueSelector {
     flex: 1 0 100%;
     display: block;
     width: 100%;
-    padding: 0.5rem;
+    padding: 0 0.75rem 0.75rem;
+    order: 3;
   }
 
   .content {
+    flex: 1;
     flex-shrink: 0;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem 0 0;
     gap: 0.25rem;
+    height: 3.5rem;
+    min-width: 0;
   }
 
   .envBadge {
     left: 50%;
     transform: translateX(-50%);
     right: auto;
+    max-width: calc(100vw - 1rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 }

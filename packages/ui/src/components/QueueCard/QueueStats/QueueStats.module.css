@@ -72,3 +72,22 @@
 .paused {
   background-color: var(--paused);
 }
+
+@media (max-width: 768px) {
+  .stats {
+    width: 100%;
+    gap: 0.5rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .stats::-webkit-scrollbar {
+    display: none;
+  }
+
+  .progressBar {
+    height: 0.875rem;
+    min-width: 12rem;
+    font-size: 0.65rem;
+  }
+}

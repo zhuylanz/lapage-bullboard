@@ -1,14 +1,30 @@
 .jobActions {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .jobActions li + li {
-    margin-left: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .jobActions .button {
-    padding: 0.5rem;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .jobActions {
+    gap: 0.25rem;
+  }
+
+  .jobActions li + li {
+    margin-left: 0;
+  }
+
+  .jobActions .button {
+    min-width: 2.25rem;
+    min-height: 2.25rem;
+    padding: 0.4rem;
+  }
 }

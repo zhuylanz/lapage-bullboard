@@ -57,3 +57,24 @@
   white-space: nowrap;
   flex-shrink: 0;
 }
+
+@media (max-width: 768px) {
+  .queueCard {
+    gap: 0.75rem;
+  }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  .headerContext {
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .link {
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.35;
+  }
+}

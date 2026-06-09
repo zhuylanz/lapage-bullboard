@@ -42,6 +42,9 @@ class PaginationInner extends React.PureComponent<IPaginationProps> {
         pageCount={pageCount}
         marginPagesDisplayed={2}
         pageRangeDisplayed={3}
+        pageClassName={s.page}
+        previousClassName={s.previous}
+        nextClassName={s.next}
         onPageChange={this.handlePageChange}
         containerClassName={s.pagination}
         activeClassName={s.isActive}

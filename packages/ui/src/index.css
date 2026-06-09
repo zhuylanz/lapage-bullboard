@@ -194,8 +194,8 @@
 
 @media (max-width: 768px) {
   :root {
-    --header-height: 108px;
-    --body-padding: 1rem;
+    --header-height: 116px;
+    --body-padding: 0.75rem;
     --card-padding: 0.75rem;
     --menu-width: 0px;
   }
@@ -231,10 +231,12 @@ small {
 
 main {
   min-height: 100%;
+  min-width: 0;
 }
 
 main > div {
   padding: var(--body-padding);
+  min-width: 0;
 }
 
 /* Mobile styles */
@@ -242,6 +244,16 @@ main > div {
   html,
   body {
     overflow-x: hidden;
+    overscroll-behavior-x: none;
+  }
+
+  body {
+    font-size: 15px;
+  }
+
+  main > div {
+    width: 100%;
+    max-width: 100vw;
   }
 }
 

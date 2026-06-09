@@ -4,7 +4,8 @@
   z-index: 2;
   background-color: var(--body-bg);
   margin: 0 calc(var(--body-padding) * -1);
-  padding: 0 var(--body-padding);
+  padding: 0 var(--body-padding) 0.5rem;
+  backdrop-filter: blur(8px);
 }
 
 .actionContainer {
@@ -19,9 +20,14 @@
 }
 
 @media (max-width: 768px) {
+  .stickyHeader {
+    z-index: 3;
+  }
+
   .actionContainer {
     flex-direction: column;
     align-items: stretch;
     gap: 0.5rem;
+    padding-bottom: 0;
   }
 }

@@ -49,11 +49,32 @@
 /* Mobile styles */
 @media (max-width: 768px) {
   .pagination {
-    justify-content: space-evenly;
+    justify-content: center;
     width: 100%;
+    gap: 0.125rem;
+    overflow: hidden;
   }
 
   .pagination li + li {
     margin-left: 0;
+  }
+
+  .pagination a {
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6em 0.7em;
+  }
+
+  .page:not(.isActive),
+  .breakMe {
+    display: none;
+  }
+
+  .previous,
+  .next,
+  .page.isActive {
+    display: flex;
   }
 }

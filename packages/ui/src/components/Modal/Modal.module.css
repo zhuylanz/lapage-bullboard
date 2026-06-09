@@ -121,3 +121,26 @@
   padding: 1rem 0.5rem;
   overflow: auto;
 }
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    justify-content: flex-end;
+    padding: 0.5rem;
+  }
+
+  .content {
+    max-height: calc(100dvh - 1rem);
+    border-radius: 0.75rem 0.75rem 0.5rem 0.5rem;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.5rem;
+  }
+
+  .description {
+    padding: 0.75rem 0;
+  }
+}

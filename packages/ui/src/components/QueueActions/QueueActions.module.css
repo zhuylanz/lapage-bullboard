@@ -18,3 +18,24 @@
 .queueActions .button:focus > svg {
   fill: var(--accent-color-d1);
 }
+
+@media (max-width: 768px) {
+  .queueActions {
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 0.125rem;
+  }
+
+  .queueActions::-webkit-scrollbar {
+    display: none;
+  }
+
+  .queueActions > li {
+    flex: 0 0 auto;
+  }
+
+  .queueActions .button {
+    min-height: 2.5rem;
+    white-space: nowrap;
+  }
+}

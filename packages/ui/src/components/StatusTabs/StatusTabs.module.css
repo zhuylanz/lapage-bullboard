@@ -113,8 +113,27 @@
 .paused { --dot-color: var(--paused); }
 
 @media (max-width: 768px) {
+  .statusBar {
+    margin-bottom: 0.5rem;
+  }
+
+  .statusTabs {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    scroll-snap-type: x proximity;
+  }
+
+  .statusTabs > li {
+    scroll-snap-align: start;
+  }
+
   .statusTabs > li > a {
-    padding: 0.5em 0.6em;
+    min-height: 2.5rem;
+    padding: 0.5em 0.65em;
     font-size: 0.8rem;
+  }
+
+  .trailing {
+    padding-left: 0.25rem;
   }
 }

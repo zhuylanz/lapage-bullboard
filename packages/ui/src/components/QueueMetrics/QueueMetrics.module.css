@@ -129,9 +129,29 @@
   .metricsCard {
     flex-direction: column;
     padding: 0.875rem 1rem;
+    overflow: hidden;
+  }
+
+  .header {
+    align-items: flex-start;
+  }
+
+  .legend {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.125rem;
+    scrollbar-width: none;
+  }
+
+  .legend::-webkit-scrollbar {
+    display: none;
   }
 
   .summary {
     gap: 0.75rem 1.5rem;
+  }
+
+  .metricsCard :global(.recharts-responsive-container) {
+    min-width: 0;
   }
 }
