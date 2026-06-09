@@ -62,7 +62,8 @@
     }
   },
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "tag": "latest"
   },
   "devDependencies": {
     "@types/ejs": "^3.1.5",

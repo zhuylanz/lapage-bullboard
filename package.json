@@ -40,6 +40,7 @@
     "lint": "oxlint './packages/**/*.{ts,tsx}' . --fix",
     "format": "oxfmt './packages/**/*.{ts,tsx}' .",
     "prepublishOnly": "yarn build",
+    "publish:bullboard": "npm publish --workspace @lapage/bullboard --access public --tag latest",
     "release": "release-it",
     "test": "yarn workspaces foreach -A run test"
   },

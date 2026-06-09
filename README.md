@@ -54,6 +54,22 @@ yarn add bullmq
 yarn add bull
 ```
 
+## Publishing
+
+This repository is a private monorepo, so do not run plain `npm publish` from the repository root. Publish the package workspace instead:
+
+```sh
+yarn build
+npm run publish:bullboard -- --otp <one-time-password>
+```
+
+Or publish directly from the package folder:
+
+```sh
+cd packages/bullboard
+npm publish --access public --tag latest --otp <one-time-password>
+```
+
 ### NestJS specific setup
 
 The original `@bull-board/nestjs` module is not bundled in `@lapage/bullboard`. Use this fork directly with Express, or keep using the upstream framework adapters if you need a non-Express integration.
