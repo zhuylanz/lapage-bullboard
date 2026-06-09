@@ -1,21 +1,23 @@
 {
-  "name": "@bull-board/root",
+  "name": "@lapage/bullboard-root",
   "version": "7.2.1",
   "private": true,
-  "description": "Bull queue UI for inspecting jobs",
+  "description": "Mobile-enhanced bull-board fork for monitoring Bull and BullMQ queues from desktop and mobile browsers",
   "keywords": [
     "bull",
     "bullmq",
     "dashboard",
     "monitoring",
     "queue",
-    "redis"
+    "redis",
+    "mobile",
+    "responsive"
   ],
   "bugs": {
-    "url": "https://github.com/felixmosh/bull-board/issues"
+    "url": "https://github.com/zhuylanz/lapage-bullboard/issues"
   },
   "license": "MIT",
-  "author": "felixmosh",
+  "author": "lapage",
   "contributors": [
     "Erik Engervall <erik.engervall@gmail.com>",
     "felixmosh",
@@ -23,7 +25,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/felixmosh/bull-board.git"
+    "url": "git+ssh://git@github.com/zhuylanz/lapage-bullboard.git"
   },
   "workspaces": [
     "packages/*"

@@ -603,22 +603,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@bull-board/root@workspace:.":
-  version: 0.0.0-use.local
-  resolution: "@bull-board/root@workspace:."
-  dependencies:
-    "@release-it-plugins/workspaces": "npm:^5.0.3"
-    "@types/node": "npm:^22.19.20"
-    auto-changelog: "npm:^2.6.0"
-    concurrently: "npm:^10.0.3"
-    oxfmt: "npm:^0.53.0"
-    oxlint: "npm:^1.68.0"
-    release-it: "npm:^19.2.4"
-    ts-node-dev: "npm:^2.0.0"
-    typescript: "npm:^5.9.3"
-  languageName: unknown
-  linkType: soft
-
 "@bull-board/ui@npm:7.2.1, @bull-board/ui@workspace:packages/ui":
   version: 0.0.0-use.local
   resolution: "@bull-board/ui@workspace:packages/ui"
@@ -2347,6 +2331,22 @@ __metadata:
   checksum: 10c0/424fde486717245a1216b380fba11af60d119d10c7d40036bdf51a6b8ebfa532423f15d3f2ce270277f4bdc2ade3c7dbb7ffe900bacaa14395bf8f9501a094ba
   languageName: node
   linkType: hard
+
+"@lapage/bullboard-root@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "@lapage/bullboard-root@workspace:."
+  dependencies:
+    "@release-it-plugins/workspaces": "npm:^5.0.3"
+    "@types/node": "npm:^22.19.20"
+    auto-changelog: "npm:^2.6.0"
+    concurrently: "npm:^10.0.3"
+    oxfmt: "npm:^0.53.0"
+    oxlint: "npm:^1.68.0"
+    release-it: "npm:^19.2.4"
+    ts-node-dev: "npm:^2.0.0"
+    typescript: "npm:^5.9.3"
+  languageName: unknown
+  linkType: soft
 
 "@lapage/bullboard@workspace:packages/bullboard":
   version: 0.0.0-use.local

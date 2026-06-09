@@ -1,35 +1,36 @@
-# <img alt="@bull-board" src="https://raw.githubusercontent.com/felixmosh/bull-board/master/packages/ui/src/static/images/logo.svg" width="35px" /> @bull-board
+# <img alt="@lapage/bullboard" src="https://raw.githubusercontent.com/felixmosh/bull-board/master/packages/ui/src/static/images/logo.svg" width="35px" /> @lapage/bullboard
 
-Bull Dashboard is a UI built on top of [Bull](https://github.com/OptimalBits/bull) or [BullMQ](https://github.com/taskforcesh/bullmq) to help you visualize your queues and their jobs.
-With this library you get a beautiful UI for visualizing what's happening with each job in your queues, their status and some actions that will enable you to get the job done.
+`@lapage/bullboard` is a fork of [bull-board](https://github.com/felixmosh/bull-board) with an enhanced responsive UI for monitoring and managing [Bull](https://github.com/OptimalBits/bull) and [BullMQ](https://github.com/taskforcesh/bullmq) queues from both desktop and mobile browsers.
+
+It keeps the familiar Bull Dashboard experience while improving mobile layouts for queue monitoring, job inspection, pagination, modals, status tabs, queue cards, and common queue/job actions. This is useful when operators need to check or manage queues from a phone without switching to a desktop viewport.
 
 <p align="center">
-  <a href="https://www.npmjs.com/org/bull-board">
-    <img alt="npm downloads" src="https://img.shields.io/npm/dw/@bull-board/api">
+  <a href="https://www.npmjs.com/package/@lapage/bullboard">
+    <img alt="npm downloads" src="https://img.shields.io/npm/dw/@lapage/bullboard">
   </a>
-  <a href="https://github.com/felixmosh/bull-board/blob/master/LICENSE">
+  <a href="https://github.com/zhuylanz/lapage-bullboard/blob/master/LICENSE">
     <img alt="licence" src="https://img.shields.io/github/license/felixmosh/bull-board">
   </a>
-  <img alt="open issues" src="https://img.shields.io/github/issues/felixmosh/bull-board"/>
+  <img alt="open issues" src="https://img.shields.io/github/issues/zhuylanz/lapage-bullboard"/>
 <p>
 
 ![Overview](https://raw.githubusercontent.com/felixmosh/bull-board/master/screenshots/overview.png)
 ![UI](https://raw.githubusercontent.com/felixmosh/bull-board/master/screenshots/dashboard.png)
 
-## Packages
+## Package
 
-| Name                                                                     | Version                                                           |
-|--------------------------------------------------------------------------|-------------------------------------------------------------------|
-| [@bull-board/api](https://www.npmjs.com/package/@bull-board/api)         | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/api)     |
-| [@bull-board/ui](https://www.npmjs.com/package/@bull-board/ui)           | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/ui)      |
-| [@bull-board/express](https://www.npmjs.com/package/@bull-board/express) | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/express) |
-| [@bull-board/fastify](https://www.npmjs.com/package/@bull-board/fastify) | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/fastify) |
-| [@bull-board/koa](https://www.npmjs.com/package/@bull-board/koa)         | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/koa)     |
-| [@bull-board/hapi](https://www.npmjs.com/package/@bull-board/hapi)       | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/hapi)    |
-| [@bull-board/nestjs](https://www.npmjs.com/package/@bull-board/nestjs)   | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/nestjs)  |
-| [@bull-board/hono](https://www.npmjs.com/package/@bull-board/hono)       | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/hono)    |
-| [@bull-board/h3](https://www.npmjs.com/package/@bull-board/h3)           | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/h3)      |
-| [@bull-board/elysia](https://www.npmjs.com/package/@bull-board/elysia)   | ![npm (scoped)](https://img.shields.io/npm/v/@bull-board/elysia)  |
+| Name | Version |
+|------|---------|
+| [@lapage/bullboard](https://www.npmjs.com/package/@lapage/bullboard) | ![npm (scoped)](https://img.shields.io/npm/v/@lapage/bullboard) |
+
+This package bundles the API helpers, Express adapter, queue adapters, and mobile-enhanced UI assets in one installable package.
+
+## Why This Fork
+
+- Responsive mobile UI for queue monitoring from phones and narrow screens.
+- Improved layouts for queue cards, queue actions, job actions, logs, status tabs, pagination, modals, and sticky headers.
+- Single package import for the common Express/Bull/BullMQ setup.
+- Compatibility with Bull and BullMQ queues through the original bull-board adapter APIs.
 
 ## Notes
 
@@ -44,31 +45,18 @@ If you want to learn more about queues, check out [Bull's docs](https://optimalb
 
 ## Starting
 
-To add it to your project start by installing a server framework specific adapter to your dependencies list:
+To add it to your project, install the mobile-enhanced fork plus your queue library:
 
 ```sh
-yarn add @bull-board/api
-# and one of the following server adapters
-yarn add @bull-board/express
-# or
-yarn add @bull-board/fastify
-# or
-yarn add @bull-board/hapi
-# or
-yarn add @bull-board/koa
-# or
-yarn add @bull-board/nestjs
-# or
-yarn add @bull-board/hono
-# or
-yarn add @bull-board/h3
-# or
-yarn add @bull-board/elysia
+yarn add @lapage/bullboard
+yarn add bullmq
+# or, for Bull v3/v4 queues
+yarn add bull
 ```
 
 ### NestJS specific setup
 
-@bull-board provides a module for easy integration with NestJS, for reference on how to use the module refer to the [NestJS Module](https://github.com/felixmosh/bull-board/tree/master/packages/nestjs) package
+The original `@bull-board/nestjs` module is not bundled in `@lapage/bullboard`. Use this fork directly with Express, or keep using the upstream framework adapters if you need a non-Express integration.
 
 ## Hello World
 
@@ -76,10 +64,7 @@ yarn add @bull-board/elysia
 const express = require('express');
 const Queue = require('bull');
 const { Queue: QueueMQ } = require('bullmq');
-const { createBullBoard } = require('@bull-board/api');
-const { BullAdapter } = require('@bull-board/api/bullAdapter');
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter');
-const { ExpressAdapter } = require('@bull-board/express');
+const { createBullBoard, BullAdapter, BullMQAdapter, ExpressAdapter } = require('@lapage/bullboard');
 
 const someQueue = new Queue('someQueueName', {
   redis: { port: 6379, host: '127.0.0.1', password: 'foobared' },
@@ -116,8 +101,7 @@ If you use [BullMQ Pro](https://docs.bullmq.io/bullmq-pro/introduction), import 
 
 ```js
 const { QueuePro } = require('@taskforcesh/bullmq-pro');
-const { createBullBoard } = require('@bull-board/api');
-const { BullMQProAdapter } = require('@bull-board/api/bullMQProAdapter');
+const { createBullBoard, BullMQProAdapter } = require('@lapage/bullboard');
 
 const queuePro = new QueuePro('queueProName');
 
@@ -162,8 +146,7 @@ When set to `true`, hides the Redis Details button in the UI header. This is use
 
 ```js
 const { Queue: QueueMQ } = require('bullmq');
-const {createBullBoard} = require('@bull-board/api');
-const {BullMQAdapter} = require('@bull-board/api/bullMQAdapter');
+const { createBullBoard, BullMQAdapter } = require('@lapage/bullboard');
 
 const queueMQ = new QueueMQ();
 
@@ -198,9 +181,7 @@ Makes the UI as read only, hides all queue & job related actions
 ```js
 const Queue = require('bull')
 const { Queue: QueueMQ } = require('bullmq');
-const { createBullBoard } = require('@bull-board/api')
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter')
-const { BullAdapter } = require('@bull-board/api/bullAdapter')
+const { createBullBoard, BullAdapter, BullMQAdapter } = require('@lapage/bullboard')
 
 const someQueue = new Queue()
 const queueMQ = new QueueMQ()
@@ -218,9 +199,7 @@ When set to `false` the UI removes the job retry buttons for a queue. This optio
 
 ```js
 const { Queue: QueueMQ } = require('bullmq');
-const { createBullBoard } = require('@bull-board/api')
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter')
-const { BullAdapter } = require('@bull-board/api/bullAdapter')
+const { createBullBoard, BullAdapter, BullMQAdapter } = require('@lapage/bullboard')
 
 const someQueue = new Queue()
 const queueMQ = new QueueMQ()
@@ -244,8 +223,7 @@ createBullBoard({
 ```js
 const { Queue: QueueMQ } = require('bullmq');
 const fastRedact = require('fast-redact');
-const { createBullBoard } = require('@bull-board/api');
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter');
+const { createBullBoard, BullMQAdapter } = require('@lapage/bullboard');
 
 const redact = fastRedact({
   paths: ['headers.cookie', 'password', 'access_token']
@@ -269,9 +247,7 @@ You can control which queues are visible in the UI on a per-request basis using 
 The `setVisibilityGuard` method on a queue adapter accepts a function that receives the `BullBoardRequest` object and should return `true` if the queue should be visible, and `false` otherwise.
 
 ```javascript
-const { createBullBoard } = require('@bull-board/api');
-const { BullMQAdapter } = require('@bull-board/api/bullMQAdapter');
-const { ExpressAdapter } = require('@bull-board/express');
+const { createBullBoard, BullMQAdapter, ExpressAdapter } = require('@lapage/bullboard');
 
 // A simple authentication middleware
 function isAuthenticated(req, res, next) {
@@ -313,9 +289,7 @@ If you host your express service on a different path than root (/) ie. https://<
 
 ```js
 const Queue = require('bull')
-const { createBullBoard } = require('@bull-board/api')
-const { BullAdapter } = require('@bull-board/api/bullAdapter')
-const { ExpressAdapter } = require('@bull-board/express')
+const { createBullBoard, BullAdapter, ExpressAdapter } = require('@lapage/bullboard')
 
 const basePath = '/my-base-path';
 

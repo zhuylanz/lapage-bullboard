@@ -1,7 +1,7 @@
 {
   "name": "@lapage/bullboard",
   "version": "7.2.1-lapage.0",
-  "description": "Mobile-enhanced Bull queue dashboard built on bull-board.",
+  "description": "Mobile-enhanced bull-board fork for monitoring and managing Bull and BullMQ queues from desktop and mobile browsers.",
   "keywords": [
     "bull",
     "bullmq",
@@ -9,7 +9,9 @@
     "monitoring",
     "queue",
     "redis",
-    "mobile"
+    "mobile",
+    "responsive",
+    "mobile-dashboard"
   ],
   "repository": {
     "type": "git",
