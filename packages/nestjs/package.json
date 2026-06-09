@@ -32,7 +32,7 @@
     "@bull-board/fastify": "^7.2.1",
     "@nestjs/bull-shared": "^11.0.4",
     "@nestjs/bullmq": "^11.0.4",
-    "@nestjs/common": "^11.1.24",
+    "@nestjs/common": "^11.1.26",
     "@nestjs/core": "^11.1.24",
     "@types/node": "^22.19.20",
     "bull": "^4.16.5",
