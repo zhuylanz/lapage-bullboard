@@ -50,7 +50,7 @@
     "auto-changelog": "^2.6.0",
     "concurrently": "^10.0.3",
     "oxfmt": "^0.53.0",
-    "oxlint": "^1.68.0",
+    "oxlint": "^1.69.0",
     "release-it": "^19.2.4",
     "ts-node-dev": "^2.0.0",
     "typescript": "^5.9.3"
